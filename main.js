@@ -6,11 +6,7 @@
   }
   w.parseBool || (w.parseBool = function (check, locale) {
     var local;
-    if (typeof locale !== 'undefined' && locale !== '') {
-      local = vocab[locale] || vocab["en-US"];
-    } else {
-      local = vocab[n.language] || vocab["en-US"];
-    }
+    local = vocab[locale] || vocab[n.language] || vocab["en-US"];
     return typeof check === 'string' ? !check.match(local.join('|')) : undefined;
   })
 })(window, navigator || null);
