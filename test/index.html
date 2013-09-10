@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>parseBool test</title>
+  </head>
+  <body>
+
+    Type here somthing: <br>
+    <input type="text" onkeyup="checkBool(this)"><br>
+
+    And now you'll see the result:<br>
+    <div id="res"></div>
+
+    <script type="text/javascript" src="../main.js"></script>
+    <script type="text/javascript">
+      var resDiv = document.getElementById('res');
+      function checkBool(input) {
+        resDiv.innerHTML = parseBool(input.value);
+      }
+    </script>
+  </body>
+</html>
