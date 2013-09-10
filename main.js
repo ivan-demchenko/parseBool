@@ -1,5 +1,16 @@
-(function(){
-  window.parseBool || (window.parseBool = function (string) {
-    return typeof string === 'string' ? !string.match('false|нет|no|nein|nicht|увы|хер') : undefined;
+(function(w, n){
+  var vocab;
+  vocab = {
+    "en-US": ['false', 'no', 'fuck'],
+    "ru-RU": ['нет', 'увы', 'хуй', 'ф(а|о)лс']
+  }
+  w.parseBool || (w.parseBool = function (check, locale) {
+    var local;
+    if (typeof locale !== 'undefined' && locale !== '') {
+      local = vocab[locale] || vocab["en-US"];
+    } else {
+      local = vocab[n.language] || vocab["en-US"];
+    }
+    return typeof check === 'string' ? !check.match(local.join('|')) : undefined;
   })
-})(window);
+})(window, navigator || null);

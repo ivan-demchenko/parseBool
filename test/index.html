@@ -9,6 +9,8 @@
     Type here somthing: <br>
     <input type="text" onkeyup="checkBool(this)"><br>
 
+    Use browser's language or this: <input type="text" id="localeInput"> (en-US or ru-RU)<br>
+
     And now you'll see the result:<br>
     <div id="res"></div>
 
@@ -16,7 +18,7 @@
     <script type="text/javascript">
       var resDiv = document.getElementById('res');
       function checkBool(input) {
-        resDiv.innerHTML = parseBool(input.value);
+        resDiv.innerHTML = parseBool(input.value, document.getElementById('localeInput').value);
       }
     </script>
   </body>
