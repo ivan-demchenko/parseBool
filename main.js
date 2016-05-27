@@ -3,7 +3,7 @@
   var vocab;
   vocab = {
     "en-US": ['false', 'n(o+)', 'fuck'],
-    "ru-RU": ['н(е+)т', 'увы', 'хуй', 'ф(а|о)лс']
+    "ru-RU": ['н(е+)т', 'увы', 'ф(а|о)лс']
   };
   w.parseBool || (w.parseBool = function (check, locale) {
     var local;
